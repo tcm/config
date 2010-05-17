@@ -1,0 +1,6 @@
+# Normal-Config
+# DEFAULT = $HOME/Maildir/
+
+#:0 w
+#| /usr/bin/zarafa-dagent $LOGNAME
+#EXITCODE=$?

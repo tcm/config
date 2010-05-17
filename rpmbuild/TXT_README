@@ -1,0 +1,18 @@
+#rpmbuild -ba ./SPECS/clamav.spec
+
+bzip-1.0.5:
+Prinzipiell muesste nur die Library compiliert werden.
+# make -f Makefile-libz2.so
+
+Library nach /lib kopieren.
+Danach symbolischen Link in /lib auf diese Library machen.
+
+
+Änderungen im spec-File:
+
+1. Version ändern.
+2. Release ändern.
+3. Endung des Quellfiles von .bz2 auf .gz.
+4. Depencies auskommentieren.
+5. Patches auskommentieren.
+6 --enable-milter auskommentieren.
