@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 #
 #	@(#) generate-rfc4193-addr.sh (ULA)  (c) Sep 2004 - Dec 2006	Holger Zuleger 
 #

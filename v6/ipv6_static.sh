@@ -7,4 +7,4 @@ ip -6 addr show
 
 echo "1" > /proc/sys/net/ipv6/conf/all/forwarding
 echo ""
-echo '"1" > /proc/sys/net/ipv6/conf/all/forwarding'
+echo 'echo "1" > /proc/sys/net/ipv6/conf/all/forwarding'
