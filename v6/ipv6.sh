@@ -59,7 +59,8 @@ else
 		tr -d "."`
 fi
 
-secondpart=`ifconfig eth0 |
+#secondpart=`ifconfig eth0 |
+secondpart=`ifconfig eth1 |
 	grep "inet6 addr: fe80" |
 	sed  -n "s|^.*::\([^/]*\)/.*|\1|p" |
 	tr -d ":"`
