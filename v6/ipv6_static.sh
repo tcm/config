@@ -1,7 +1,11 @@
 #!/bin/bash
 
-ip -6 addr del 2001:db8::1/64 dev eth0
-ip -6 addr add 2001:db8::1/64 dev eth0
+ip -6 addr del fd6c:cbe6:14ac:100::2/64 dev eth0
+ip -6 addr add fd6c:cbe6:14ac:100::2/64 dev eth0
+
+# veraltet
+#ip -6 addr del 2001:db8::1/64 dev eth0
+#ip -6 addr add 2001:db8::1/64 dev eth0
 
 ip -6 addr show
 
