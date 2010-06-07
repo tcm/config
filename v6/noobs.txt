@@ -1,0 +1,45 @@
+IPv6 besser kennenlernen:
+
+- Ping von 2 Link-Local Adressen. -> OK
+
+-Einen 6to4-Tunnel bei he.net einrichten.  -> OK
+-Ping auf ipv6.google.com. -> OK mit SUSE 10.3 von Daheim
+-Ping auf ipv6.google.com. -> OK mit SUSE 10.2 von Firma
+
+-IPv6 auf Windows 2003 Server installieren. --> OK
+-Ping von ipv6.google.com mit Windows XP/7 (he.net) --> OK
+
+- Einen DHCPv6-Daemon aufsetzen. --> OK
+- Dibbler auf Windows XP Rechner installiert. -->OK
+
+- Einen RADVD unter Linux aufsetzen.  -> OK
+
+- Ping von 2 Link-Local Adressen. -> OK
+
+- AAAA-Eintrag in Windows-DNS funktioniert (Server 2000, 2003).
+- nslookup funktioniert von Server 2008 (interne Adresse oder ipv6.google.com).
+- nslookup funktioniert nicht von Server 2003.
+
+
+
+
+
+
+TODO:
+
+- DNS mit IPv6-Adressen (bind9).
+- Wie verhält sich der 5406 von HP (IPv6-Routing zwischen den Portbasierten VLAN's)?
+
+
+
+
+
+
+Kommandozeilen Tips:
+
+# echo "1" /proc/.....
+# /etc/init.d/radvd start
+# ip -6 neigh
+
+ # ping6 -I eth0 <link-local-Adresse>
+
