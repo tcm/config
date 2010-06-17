@@ -1,0 +1,66 @@
+INSTALLATION:
+
+# install system
+# show version
+
+# configure
+# exit
+
+# show interfaces
+# exit
+
+
+
+IPv4:.
+
+1
+# set interfaces ethernet eth0 address 192.168.100.254/24
+# commit
+
+# set service https
+
+
+2. 
+
+# set interfaces ethernet eth0 address 192.168.10.254/24
+# commit
+
+
+KONFIGURATION SICHERN:
+# save
+# save testconfig
+
+# sudo /dev/sdb1 /mnt
+# save /mnt/config.txt
+
+
+
+IPv6:
+
+1.
+# set interface ethernet eth0 address fd6c:cbe6:14ac:100::254/64
+# commit
+
+# set interfaces ethernet eth0 ipv6 router-advert prefix fd6c:cbe6:14ac:100::/64
+# set interfaces ethernet eth0 ipv6 router-advert max-interval 10
+# set interfaces ethernet eth0 ipv6 router-advert min-interval 3
+# set interfaces ethernet eth0 ipv6 router-advert prefix fd6c:cbe6:14ac:100::/64 autonomous-flag true
+# set interfaces ethernet eth0 ipv6 router-advert prefix fd6c:cbe6:14ac:100::/64 on-link-flag true
+# set interfaces ethernet eth0 ipv6 router-advert prefix fd6c:cbe6:14ac:100::/64 preferred-lifetime 120
+# set interfaces ethernet eth0 ipv6 router-advert prefix fd6c:cbe6:14ac:100::/64 valid-lifetime 300
+# set interfaces ethernet eth0 ipv6 router-advert send-advert true
+# commit
+
+2.
+# set interface ethernet eth0 address fd6c:cbe6:14ac:10::254/64
+# commit
+
+# set interfaces ethernet eht0 ipv6 router-advert prefix fd6c:cbe6:14ac:10::/64
+# set interfaces ethernet eth0 ipv6 router-advert max-interval 10
+# set interfaces ethernet eth0 ipv6 router-advert min-interval 3
+# set interfaces ethernet eth0 ipv6 router-advert prefix fd6c:cbe6:14ac:10::/64 autonomous-flag true
+# set interfaces ethernet eth0 ipv6 router-advert prefix fd6c:cbe6:14ac:10::/64 on-link-flag true
+# set interfaces ethernet eth0 ipv6 router-advert prefix fd6c:cbe6:14ac:10::/64 preferred-lifetime 120
+# set interfaces ethernet eth0 ipv6 router-advert prefix fd6c:cbe6:14ac:10::/64 valid-lifetime 300
+# set interfaces ethernet eth0 ipv6 router-advert send-advert true
+# commit
