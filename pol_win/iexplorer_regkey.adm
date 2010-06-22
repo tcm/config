@@ -1,0 +1,24 @@
+;ADM Template Author: Juergen
+
+Class User
+	CATEGORY "REGKEY_AENDERN" 
+
+		CATEGORY "Internet Explorer" 
+
+			POLICY "AutoComplete" 
+
+			KEYNAME "SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\AutoComplete"
+
+			PART "AutoSuggest" CHECKBOX
+			VALUENAME AutoSuggest
+				VALUEON "yes"
+				VALUEOFF "no"
+			END PART 
+
+				
+
+			END POLICY ;Autocomplete
+
+		END CATEGORY ;Internet Explorer 
+
+	END CATEGORY ;REGKEY_AENDERN

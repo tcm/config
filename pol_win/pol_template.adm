@@ -1,0 +1,25 @@
+;ADM Template Author: Juergen
+
+Class Machine 
+	CATEGORY "MCSEBoard" 
+
+		CATEGORY "Cornelsen" 
+
+			POLICY "Smart" 
+				KEYNAME "SOFTWARE\Cornelsen\Smart\561569V05" 
+
+				PART "Settings" Edittext 
+					VALUENAME "Settings" 
+
+				END PART 
+
+				PART "Netuserdb" Edittext 
+					VALUENAME "Netuserdb" 
+
+				END PART 
+
+			END POLICY ;Smart 
+
+		END CATEGORY ;Cornelsen 
+
+	END CATEGORY ;MCSEBoard

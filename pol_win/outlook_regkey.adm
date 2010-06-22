@@ -1,0 +1,24 @@
+;ADM Template Author: Juergen
+
+Class User
+	CATEGORY "REGKEY_AENDERN" 
+
+		CATEGORY "Outlook 2003" 
+
+			POLICY "ShowAutoSug" 
+
+			KEYNAME "SOFTWARE\Microsoft\Office\11.0\Outlook\Preferences"
+
+			PART "ShowAutoSug" CHECKBOX
+			VALUENAME ShowAutoSug
+				VALUEON NUMERIC 1
+				VALUEOFF NUMERIC 0
+			END PART 
+
+				
+
+			END POLICY ;ShowAutoSug
+
+		END CATEGORY ;Outlook 2003
+
+	END CATEGORY ;REGKEY_AENDERN
