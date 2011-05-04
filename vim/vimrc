@@ -1,0 +1,20 @@
+:set number
+:set nobackup
+
+:map <F2> :w<cr>
+:imap <F2> <ESC>:w<cr>i
+
+:map <F3> yy
+:imap <F3> <ESC>yyi
+
+:map <F4> p
+:imap <F4> <ESC>pi
+
+:map <F5> dd
+:imap <F5> <ESC>ddi
+
+:map <F6> :%s/mail/unix4/
+:map <F7> :%s/unix4alt/mail/
+:map <F8> :%s/sep2/sep1/
+:map <F9> :%s/prefix2/prefix1/
+
