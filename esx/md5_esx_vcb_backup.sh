@@ -3,9 +3,14 @@
 
 if [ ! $1 ]; then
   echo "Usage: $0 <Hostname>"
-  exit 1;
+  exit 1
 fi
 
+if [ ! -f /backup/vmware/aaa_vmware_backup ];
+then
+echo "Backup-Share nicht gemountet!"
+exit 2
+fi
 
 HOSTNAME=$1
 BACKUP_ROOT=/vmimages
@@ -43,4 +48,3 @@ else
         echo "8. Delete Local Backup-Directory..."
         rm -vr /$BACKUP_ROOT/$HOSTNAME/
 fi
-
