@@ -48,10 +48,13 @@ deshalb:
 
 
 Erkenntnis:
-- Es muss auf jeden Fall ein radvd laufen.  Als Default-Gateway wird naemlich seine Adresse eingetragen. Zumindest bei Windows.
+- Es muss auf jeden Fall ein radvd laufen.  Als Default-Gateway wird naemlich seine Adresse (Link-Local) eingetragen. Zumindest bei Windows.
 DHCPv6 kennt naemlich keine Option fuer ein Default-Gateway. Die anderen Werte wie z.B. DNS-Server kann man aber wiederum nur ueber DHCPv6
 machen.
 
+- Im Moment besteht unter Windows 7 das Problem, wenn ich per dhcpv6 die Adressen verteile, funktioniert ein ping nicht.
+  Wenn ich die gleiche Adresse manuell vergebe geht es. 
+  Wenn ich per radvd-Adressen vergebe geht es auch, allerdings ist der Bereich nicht steuerbar. :-(
 
 
 
@@ -61,4 +64,4 @@ Kommandozeilen Tips:
 # /etc/init.d/radvd start
 # ip -6 neigh
 
- # ping6 -I eth0 <link-local-Adresse> 
+ # ping6 -I eth0 <link-local-Adresse> oder ping6 fe80::%eth0 
