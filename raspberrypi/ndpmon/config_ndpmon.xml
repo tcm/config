@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="config.xsl" ?>
+<!DOCTYPE config_ndpmon SYSTEM "/etc/ndpmon/config_ndpmon.dtd">
+<config_ndpmon>
+	<ignor_autoconf>1</ignor_autoconf>
+	<syslog_facility>LOG_LOCAL1</syslog_facility>
+	<admin_mail>scan6@pass-lokal.com</admin_mail>
+        <actions_low_pri>
+            <sendmail>0</sendmail>
+            <syslog>1</syslog>
+            <exec_pipe_program>/usr/lib/ndpmon/create_html_table.py</exec_pipe_program>
+        </actions_low_pri>
+        <actions_high_pri>
+            <sendmail>0</sendmail>
+            <syslog>1</syslog>
+            <exec_pipe_program>/usr/lib/ndpmon/create_html_table.py</exec_pipe_program>
+        </actions_high_pri>
+        <use_reverse_hostlookups>1</use_reverse_hostlookups>
+    <routers>
+	<!-- Example of router definition
+	<router>
+   		<mac>00:19:bb:0e:c6:00</mac>
+
+		<lla>fe80:0:0:0:219:bbff:fe0e:c600</lla>
+
+		<param_curhoplimit>0</param_curhoplimit>
+		<param_flags_reserved>0</param_flags_reserved>
+		<param_router_lifetime>0</param_router_lifetime>
+		<param_reachable_timer>0</param_reachable_timer>
+		<param_retrans_timer>0</param_retrans_timer>
+		<param_mtu>0</param_mtu>
+		<params_volatile>1</params_volatile>
+
+		<prefixes>
+
+			<prefix>
+				<address>fda0:65da:e55a:1::</address>
+				<mask>64</mask>
+				<param_flags_reserved>0</param_flags_reserved>
+				<param_valid_time>0</param_valid_time>
+				<param_preferred_time>0</param_preferred_time>
+			</prefix>
+
+		</prefixes>
+		<addresses/>
+
+	</router>
+	-->
+    </routers>
+    <!-- Example of countermeasures configuration
+        (If no configuration is present, all countermeasures will be suppressed.)
+    <countermeasures>
+        <kill_illegitimate_router>RESPOND</kill_illegitimate_router>
+        <kill_wrong_prefix>LAUNCH AFTER 10</kill_wrong_prefix>
+        <propagate_router_params>CEASE AFTER 10</propagate_router_params>
+        <indicate_ndpmon_presence>SUPPRESS</indicate_ndpmon_presence>
+    </countermeasures>
+    -->
+</config_ndpmon>
