@@ -1,0 +1,14 @@
+# default: off
+# description: stfp per nc
+service nc
+{
+	socket_type     = stream
+	protocol        = tcp
+	wait            = no 
+	user            = root
+        server   = /usr/bin/nc
+        redirect = ebibkom.deutschepost.de 22 
+        port            = 49001 
+	server_args     = 0 
+	flags		= IPv6
+}
