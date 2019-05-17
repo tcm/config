@@ -1,0 +1,19 @@
+---
+- hosts: all
+  remote_user: ansible
+
+  tasks:
+
+
+  - name: install ftpclient
+    package: name=lftp state=installed
+    become: true
+
+  - name: install ntpclient
+    package: name=chrony state=installed
+    become: true
+
+  - name: ensure chrony is running
+    service:
+      name: chronyd
+      state: started

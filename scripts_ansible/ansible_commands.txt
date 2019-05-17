@@ -1,0 +1,8 @@
+# Verbindung prüfen
+##> ansible all -m ping -u root -k
+
+# Rechner für ansible vorbereiten
+##> ansible-playbook add-ansible-user.yml  -u root -k
+
+# Erste Softwarepakete installieren
+##> ansible-playbook install_software.yml
