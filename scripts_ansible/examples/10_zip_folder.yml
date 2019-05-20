@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Zip a Folder
+    archive:
+     path:
+       - /home/ansible/
+     dest: /home/ansible/niranjan_folder.zip
+     format: zip

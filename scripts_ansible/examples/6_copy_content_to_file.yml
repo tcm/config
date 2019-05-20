@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Copy content to a File
+    copy: content="Hello World Niranjan! \n" dest=/home/ansible/niranjan.txt

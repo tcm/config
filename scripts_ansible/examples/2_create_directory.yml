@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Create a directory
+    file: path=/home/ansible/niranjan state=directory owner=ansible group=ansible
+

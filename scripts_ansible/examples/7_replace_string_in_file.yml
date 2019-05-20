@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Replace a String in a File
+  replace:  
+    path: /home/ansible/niranjan.txt
+    regexp: 'hello'
+    replace: 'world'
