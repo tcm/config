@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Install Package
+    dnf: name=vim,git state=latest

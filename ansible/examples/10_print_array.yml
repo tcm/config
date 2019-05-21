@@ -1,0 +1,10 @@
+---
+- hosts: all
+  vars:
+    name:
+      - Vasudevamurthy
+      - Niranjan
+  tasks:
+  - name: Ansible Basic Array Example
+    debug:
+     msg: "{{ name[0] }}{{ name[1] }}"

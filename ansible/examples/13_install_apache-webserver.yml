@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Install Package
+    dnf: name=httpd state=present
+  - name: Start httpd service
+    service: name=httpd state=started
