@@ -3,6 +3,8 @@
   hosts: all
   become: true
   tags:
+   # Aufruf mit ansible-playbook <script> --tags niranjan
+   # Uebersicht mit ansible-playbook --list-tags 
    - niranjan
 
   pre_tasks:
@@ -12,11 +14,13 @@
    - name: Going to execute the main task
      debug: msg="Currently in the target server"
 
-  #post_tasks:
-  # - debug: msg="Completed task with tag - niranjan."
-  # - name: Play without tags
-  #   hosts: localhost
-     become: true
-  #tasks:
-  # - name: Command to list files
-  #   shell: ls -lrt > niranjan.txt
+  post_tasks:
+   - debug: msg="Completed task with tag - niranjan."
+
+- name: Play without tags
+  hosts: localhost
+  become: true
+
+  tasks:
+   - name: Command to list files
+     shell: ls -lrt > niranjan.txt
