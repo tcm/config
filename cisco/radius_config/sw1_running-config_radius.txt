@@ -1,0 +1,48 @@
+config-file-header
+SW1
+v2.5.0.83 / RTESLA2.5_930_364_091
+CLI v1.0
+file SSD indicator excluded
+@
+!
+unit-type-control-start 
+unit-type unit 1 network gi uplink none 
+unit-type-control-end 
+!
+voice vlan oui-table add 0001e3 Siemens_AG_phone________
+voice vlan oui-table add 00036b Cisco_phone_____________
+voice vlan oui-table add 00096e Avaya___________________
+voice vlan oui-table add 000fe2 H3C_Aolynk______________
+voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
+voice vlan oui-table add 00d01e Pingtel_phone___________
+voice vlan oui-table add 00e075 Polycom/Veritel_phone___
+voice vlan oui-table add 00e0bb 3Com_phone______________
+bonjour interface range vlan 1
+hostname SW1
+!
+radius-server host 192.168.1.100 
+aaa authentication login authen-list radius local none 
+line ssh
+login authentication authen-list
+password da39a3ee5e6b4b0d3255bfef95601890afd80709 encrypted
+exit
+username admin password encrypted ae07bf2cb206b6fdeb8985bba04132feecdcfc7b privilege 15 
+ip ssh server
+!
+config-file-header
+SW1
+v2.5.0.83 / RTESLA2.5_930_364_091
+CLI v1.0
+file SSD indicator excluded
+@
+!
+unit-type-control-start 
+unit-type unit 1 network gi uplink none 
+unit-type-control-end 
+!
+voice vlan oui-table add 0001e3 Siemens_AG_phone________
+voice vlan oui-table add 00036b Cisco_phone_____________
+voice vlan oui-table add 00096e Avaya___________________
+voice vlan oui-table add 000fe2 H3C_Aolynk______________
+voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
+voice v
