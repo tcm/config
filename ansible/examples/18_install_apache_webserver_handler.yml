@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Install the apache Package
+    dnf: name=httpd state=latest
+  - name: Copy httpd configuration file
+    copy: src=/home/ansible/files/httpd.final dest=/etc/httpd/conf/httpd.conf
+  - name: Copy index.html file
+    copy: src=/home/ansible/files/index.html dest=/var/www/html
+    notify:
+      - restart httpd
+      - name: Start httpd service
+        service: name=httpd state=started enabled=yes
+  handlers:
+  - name: restart httpd
+    service: name=httpd state=restarted

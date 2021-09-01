@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+  - name: Download Tomcat
+    get_url: url=http://us.mirrors.quenda.co/apache/tomcat/tomcat-8/v8.5.41/bin/apache-tomcat-8.5.41.tar.gz dest=/home/ansible
+  - name: Extract the file downloaded tomcat file
+    unarchive:
+     src: /home/ansible/apache-tomcat-8.5.41.tar.gz
+     dest: /home/ansible
+  - name: Move the Tomcat directory to a smaller one
+    command: mv /home/ansible/apache-tomcat-8.5.41 /home/ansible/tomcat
+  - name: Change Ownership and group of the Tomcat directory
+    file: path=/home/ansible/tomcat owner=ansible group=ansible mode=0775 state=directory recurse=yes
+  - name: Start Tomcat
+    command: nohup /home/ansible/tomcat/bin/startup.sh # Execute command even after you have exited from the shell prompt
+    become: true
+    become_user: ansible

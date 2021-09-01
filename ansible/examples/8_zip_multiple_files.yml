@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Zip multiple Files
+    archive:
+     path:
+       - /home/ansible/niranjan1.txt
+       - /home/ansible/niranjan2.txt 
+     dest: /home/ansible/niranjan_mul.zip
+     format: zip

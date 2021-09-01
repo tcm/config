@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Create a Timestamp Logfile
+    command: touch niranjan{{ansible_date_time.date}}.log

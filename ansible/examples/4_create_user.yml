@@ -1,0 +1,6 @@
+---
+- hosts: all
+  become: true
+  tasks:
+  - name: Create a User
+    user: name=niranjan password=niranjan groups=users shell=/bin/false
