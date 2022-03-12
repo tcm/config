@@ -2,46 +2,61 @@ NORMAL-MODE
 ============
 Movement:
 
-j = line down
-k = line up
-h = left
-l = right
+	j = line down
+	k = line up
+	h = left
+	l = right
 
-0: jump to begin of line
-$: jump to end of line
+	0: jump to begin of line
+	$: jump to end of line
 
-i: switch to INSERT-MODE
-a: switch to APPEND-MODE
-A: switch to APPEND-MODE and goto end of line
+	i: switch to INSERT-MODE
+	a: switch to APPEND-MODE
+
+Compound Commands:
+
+	A: switch to APPEND-MODE and goto end of line
 
 Textmanipulation:
 
-. = repeat last change
-x = delete character under cursor
-dd = delete line under cursor
-yy = copy current line to buffer
-p  = paste current line under cursor
-cw = change word under cursor
-u = undo changes
->G = increases the indentation 
-     from the current line until the end of the file
+	. = repeat last change
+	x = delete character under cursor
+	dd = delete line under cursor
+	d$ = delete to end of line
+	d0 = delete to beginning of line
+	yy = copy current line to buffer
+	p  = paste current line under cursor
+	cw = change word under cursor
+	u = undo changes
 
-Find:
-* = search for word under cursor
-f{char} = find word with char
+Textformatting:
+
+	>G = increases the indentation 
+	     from the current line until the end of the file
+
+Textsearch:
+
+	* = search for word under cursor
+	f{char} = find word with char
 
 
 COMMANDLINE-MODE (:)
-===========================
-w = save file
-wq = save and quit
-q! = quit without saving
+=====================
 
-%s/find/replace/g
+Exit and save:
+
+	w = save file
+	wq = save and quit
+	q! = quit without saving
+
+Textsearch:
+
+	%s/find/replace/g = Replace all findings in a file
 
 
 
 GLOBAL SETTINGS
-============================
-set number = line counting 
-set hls = higlight search 
+================
+
+	set number = line counting 
+	set hls = higlight search 
