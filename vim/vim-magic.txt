@@ -1,0 +1,29 @@
+Hallo! 
+
+Anbei ein schönes Beispiel für die Eleganz von vim. 
+
+Ich wollte die Datei so umformen, dass ich zum Schluß SQL-Anweisungen 
+habe und die Werte in eine Datenbank einfügen kann. Um sie anschließend 
+auszuwerten. 
+
+
+Ausführbar an der Datei oui.txt (http://standards-oui.ieee.org/oui.txt): 
+
+1. %s/(hex)/,/ # "(hex)" durch " ," ersetzen. 
+2. g/(base) 16)/d # Zeilen mit "(base) 16" löschen. 
+
+3. g/^\s/d # Leere Zeilen löschen. 
+4. g/^\s*$/d # Zeilen mit beliebig vielen Leerzeilen 
+löschen. 
+
+5. %s/ // # 3 Leerzeichen durch nichts ersetzen. 
+6. %s/\t\t/ / # 2 Tabulatoren durch 1 Leerzeichen ersetzen. 
+
+# Zu guter letzt: SQL-Anweisung aufbauen: 
+
+7. %s/^/insert into VENDOR (MAC, NAME) values('/ 
+
+usw.
+
+Gruss
+   Jürgen 

@@ -1,0 +1,64 @@
+config-file-header
+sw250-1
+v2.5.0.83 / RTESLA2.5_930_364_091
+CLI v1.0
+file SSD indicator excluded
+@
+!
+unit-type-control-start 
+unit-type unit 1 network gi uplink none 
+unit-type-control-end 
+!
+spanning-tree priority 28672
+vlan database
+vlan 10,20 
+exit
+voice vlan oui-table add 0001e3 Siemens_AG_phone________
+voice vlan oui-table add 00036b Cisco_phone_____________
+voice vlan oui-table add 00096e Avaya___________________
+voice vlan oui-table add 000fe2 H3C_Aolynk______________
+voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
+voice vlan oui-table add 00d01e Pingtel_phone___________
+voice vlan oui-table add 00e075 Polycom/Veritel_phone___
+voice vlan oui-table add 00e0bb 3Com_phone______________
+bonjour interface range vlan 1
+hostname sw250-1
+username admin password encrypted ae07bf2cb206b6fdeb8985bba04132feecdcfc7b privilege 15 
+ip ssh server
+!
+interface vlan 1
+ ip address 192.168.111.254 255.255.255.0 
+ no ip address dhcp 
+!
+interface vlan 10
+ ip address 192.168.10.254 255.255.255.0 
+!
+interface vlan 20
+ name PC2 
+ ip address 192.168.20.254 255.255.255.0 
+!
+interface GigabitEthernet1
+ description Trunkport
+ spanning-tree link-type point-to-point 
+ switchport mode trunk 
+ macro description switch
+ !next command is internal.
+ macro auto smartport dynamic_type switch 
+!
+interface GigabitEthernet6
+ description Access-Port
+ switchport access vlan 10 
+!
+interface GigabitEthernet7
+ description Acccess-Port
+ switchport access vlan 20 
+!
+interface GigabitEthernet8
+ description Trunkport
+ spanning-tree link-type point-to-point 
+ switchport mode trunk 
+ macro description switch
+ !next command is internal.
+ macro auto smartport dynamic_type switch 
+!
+exit
