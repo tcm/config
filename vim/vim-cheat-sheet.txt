@@ -12,10 +12,13 @@ Movement:
 
 	i: switch to INSERT-MODE
 	a: switch to APPEND-MODE
+	R: switch to REPLACE-MODE
 
 Compound Commands:
 
 	A: switch to APPEND-MODE and goto end of line
+	s: delete the character under the cursor and 
+           then enter the INSERT-MODE  
 
 Textmanipulation:
 
@@ -37,7 +40,10 @@ Textformatting:
 Textsearch:
 
 	* = search for word under cursor
+	n = jump forward to next match
+
 	f{char} = find word with char
+	; = jump forward to next match
 
 
 COMMANDLINE-MODE (:)
