@@ -3,6 +3,7 @@ NORMAL-MODE
 Buffer:
 
 	<C-6> = next buffer
+	<C-^> = next buffer (Englisch keyboard)
 
 COMMANDLINE-MODE (:)
 =====================
