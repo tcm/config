@@ -1,0 +1,12 @@
+NORMAL-MODE
+============
+Buffer:
+
+	<C-6> = next buffer
+
+COMMANDLINE-MODE (:)
+=====================
+Buffer:
+	bnext = next buffer
+	bprev = previous buffer
+	buffer <n> = switch to buffer <n>

@@ -52,6 +52,7 @@ COMMANDLINE-MODE (:)
 Exit and save:
 
 	w = save file
+        n1,n2 w <file> = save line n1 to n2 to <file> 
 	wq = save and quit
 	q! = quit without saving
 
