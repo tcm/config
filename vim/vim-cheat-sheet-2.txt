@@ -1,13 +1,28 @@
 NORMAL-MODE
 ============
-Buffer:
+Split Windows:
+	<C-w>s Split the current window horizontally, 
+		reusing the current buffer in the new window
+	<C-w>v Split the current window vertically, 
+		reusing the current buffer in the new window
+
+	<C-w>w Cycle beetween windows 
+
+
+Buffers:
 
 	<C-6> = next buffer
 	<C-^> = next buffer (Englisch keyboard)
 
 COMMANDLINE-MODE (:)
 =====================
-Buffer:
-	bnext = next buffer
-	bprev = previous buffer
-	buffer <n> = switch to buffer <n>
+Split Windows:
+
+	:sp[lit]  {file} Split the current window horizontally, loading {file} into the new window
+	:vsp[lit] {file} Split the current window vertically, loading {file} into the new window
+	:edit     {file} loading {file} into the new window
+
+Buffers:
+	:bnext = next buffer
+	:bprev = previous buffer
+	:buffer <n> = switch to buffer <n>

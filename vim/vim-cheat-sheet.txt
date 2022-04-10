@@ -17,8 +17,9 @@ Movement:
 Compound Commands:
 
 	A: switch to APPEND-MODE and goto end of line
+	o: <CR> and switch to INSERT-MODE
 	s: delete the character under the cursor and 
-           then enter the INSERT-MODE  
+           then enter the INSERT-MODE 
 
 Textmanipulation:
 
@@ -51,19 +52,19 @@ COMMANDLINE-MODE (:)
 
 Exit and save:
 
-	w = save file
-        n1,n2 w <file> = save line n1 to n2 to <file> 
-	wq = save and quit
-	q! = quit without saving
+	:w = save file
+        :n1,n2 w <file> = save line n1 to n2 to <file> 
+	:wq = save and quit
+	:q! = quit without saving
 
 Textsearch:
 
-	%s/find/replace/g = Replace all findings in a file
+	:%s/find/replace/g = Replace all findings in a file
 
 
 
 GLOBAL SETTINGS
 ================
 
-	set number = line counting 
-	set hls = higlight search 
+	:set number = line counting 
+	:set hls = higlight search 
