@@ -68,3 +68,5 @@ GLOBAL SETTINGS
 
 	:set number = line counting 
 	:set hls = higlight search 
+	:set nocompatible = ?
+        :filetype plugin on = standard plugins (e.g. netrw)

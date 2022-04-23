@@ -14,13 +14,19 @@ Buffers:
 	<C-6> = next buffer
 	<C-^> = next buffer (Englisch keyboard)
 
-COMMANDLINE-MODE (:)
-=====================
+COMMANDLINE-MODE
+=================
 Split Windows:
 
 	:sp[lit]  {file} Split the current window horizontally, loading {file} into the new window
 	:vsp[lit] {file} Split the current window vertically, loading {file} into the new window
 	:edit     {file} loading {file} into the new window
+
+netrw (File-Explorer):
+	:edit.     Open file explorer for current working directory
+	:Explore   Open file explorer for the directory of the active buffer
+        :SExplore  Open the file explorer in a horizontal split window
+        :VExplore  Open the file explorer in a vertical split window
 
 Buffers:
 	:bnext = next buffer
