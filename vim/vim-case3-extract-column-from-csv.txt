@@ -1,0 +1,17 @@
+Aufgabe:
+
+2022-05-20 10:47:06|install|babeltrace|1.5.3-lp152.4.7|x86_64||openSUSE-Leap-15.2|be21d17e1689b860e59889c475a153ffa968ab3dda0929b15fc22455b2d8b6c8|
+2022-05-20 10:47:06|install|calligra-extras-filemanagertemplates|3.2.1-lp152.1.1|x86_64||openSUSE-Leap-15.2|1a3ad56c5ae43461a10ed04f7bae13d40e8cc60289449975996a98b419e342d1|
+2022-05-20 10:47:07|install|kcoreaddons|5.71.0-lp152.1.1|x86_64||openSUSE-Leap-15.2|539742261863d831b93ea492f9a122968db4e9823a4cad31aa65e8b6c9ce53d0|
+
+
+Die der Inhalt von zypper (history) soll in eine Script-Datei umgewandelt werden welche die Pakete wieder löscht.
+
+
+Lösung:
+
+Die 3. Spalte mit einem Filter extrahieren:
+:%! cut -d '|' -f 3
+
+Zum Abschluss den Befehl am Anfang der Zeile einfügen:
+:%s/^/zypper rm -y  /g
