@@ -2,44 +2,6 @@ NORMAL-MODE
 ============
 Movement:
 
-<<<<<<< HEAD
-j = line down
-k = line up
-h = left
-l = right
-
-0: jump to begin of line
-$: jump to end of line
-
-i: switch to INSERT-MODE
-a: switch to APPEND-MODE
-A: switch to APPEND-MODE and goto end of line
-
-Textmanipulation:
-
-. = repeat last change
-x = delete character under cursor
-dd = delete line under cursor
-yy = copy current line to buffer
-p  = paste current line under cursor
-cw = change word under cursor
-u = undo changes
->G = increases the indentation 
-     from the current line until the end of the file
-
-Find:
-* = search for word under cursor
-f{char} = find word with char
-
-
-COMMANDLINE-MODE (:)
-===========================
-w = save file
-wq = save and quit
-q! = quit without saving
-
-%s/find/replace/g
-=======
 	j = line down
 	k = line up
 	h = left
@@ -97,21 +59,15 @@ Exit and save:
 
 Textsearch:
 
-	:%s/find/replace/g = Replace all findings in a file
->>>>>>> 0d381f0f1410e362c68eb89f96314aef3dac6caf
+	:%s/find/replace/g  = Replace all findings in a file
+	:%s/find/replace/gc = Same as above + confirmation
 
 
 
 GLOBAL SETTINGS
-<<<<<<< HEAD
-============================
-set number = line counting 
-set hls = higlight search 
-=======
 ================
 
 	:set number = line counting 
 	:set hls = higlight search 
 	:set nocompatible = ?
         :filetype plugin on = standard plugins (e.g. netrw)
->>>>>>> 0d381f0f1410e362c68eb89f96314aef3dac6caf
