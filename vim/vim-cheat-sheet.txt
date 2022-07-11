@@ -63,7 +63,8 @@ Exit and save:
 
 Textsearch:
 
-	:%s/find/replace/g = Replace all findings in a file
+	:%s/find/replace/g  = Replace all findings in a file
+	:%s/find/replace/gc = Same as above + confirmation
 
 
 

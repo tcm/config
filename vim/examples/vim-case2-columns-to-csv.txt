@@ -17,16 +17,16 @@ Barcode-Scanner Inventar-Nummer, Seriennummer usw. anscannt.
 
 Lösung 1:
 
-:3,4join
+:3,6join
 :8-11join
 
 Lösung 2:
 
-Einen Textblock mit der Maus markieren. 
-Dann 'J' im Normal-Mode drücken.
+Cursor auf die erste Zeile setzen.
+Jetzt im Normal-Mode beliebig oft 'J' drücken.
 
 
 
 
-Zum Abschluss:
-:%s/ / /g
+Zum Abschluss ein beherztes Substitute, um die Leerzeichen duch Kommas zu ersetzen.
+:%s/ /, /g
