@@ -9,6 +9,9 @@ Movement:
 
 	0: jump to begin of line
 	$: jump to end of line
+        G: jump to end of file
+
+        w: jump to next word
 
 	i: switch to INSERT-MODE
 	a: switch to APPEND-MODE
@@ -30,6 +33,7 @@ Textmanipulation:
 	d0 = delete to beginning of line
 	yy = copy current line to buffer
 	p  = paste current line under cursor
+        dw = delete word under cursor
 	cw = change word under cursor
 	u = undo changes
 
