@@ -12,6 +12,7 @@ Movement:
         G: jump to end of file
 
         w: jump to next word
+        b: jump to previous word
 
 	i: switch to INSERT-MODE
 	a: switch to APPEND-MODE
@@ -33,9 +34,13 @@ Textmanipulation:
 	d0 = delete to beginning of line
 	yy = copy current line to buffer
 	p  = paste current line under cursor
-        dw = delete word under cursor
-	cw = change word under cursor
 	u = undo changes
+
+Textmanipulation (wordwise):
+
+        dw = delete word under cursor
+        daw = delete word under cursor including next space
+	cw = change word under cursor
 
 Textformatting:
 
@@ -65,13 +70,3 @@ Textsearch:
 
 	:%s/find/replace/g  = Replace all findings in a file
 	:%s/find/replace/gc = Same as above + confirmation
-
-
-
-GLOBAL SETTINGS
-================
-
-	:set number = line counting 
-	:set hls = higlight search 
-	:set nocompatible = ?
-        :filetype plugin on = standard plugins (e.g. netrw)
