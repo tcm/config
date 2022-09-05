@@ -1,8 +1,37 @@
-# Verbindung prüfen
-##> ansible all -m ping -u root -k
+DOCS:
+=====
+https://docs.ansible.com
 
-# Rechner für ansible vorbereiten
-##> ansible-playbook add-ansible-user.yml  -u root -k
+# ansible-doc lineinfile
+# ansible-doc -s lineinfile       (Show documentation for plugin/module)
+# ansible-doc -l                  (List plugins/modules)
 
-# Erste Softwarepakete installieren
-##> ansible-playbook install_software.yml
+AD-HOC:
+=======
+# ansible <HOST> -m ping 
+# su - ansible
+# ansible <HOST> -m setup | less                           (Show facts for host)
+# ansible <HOST> -m yum -a "name=httpd state=latest"       (Install standard webserver)
+# ansible <HOST> -m service -a "name=httpd state=started"
+
+VARIABLES:
+==========
+"{{ foo_bar }}"
+ 
+FACTS:
+======
+# ansible <HOST> -m setup -a filter=*ipv4*
+# ansible <HOST> -m setup -a filter=*hostname*
+
+ansible_hostname (is pre-defined in playbooks)
+
+DEBUG
+=====
+msg: A message that is printed to STDOUT
+var: A variable whose content is printed to STDOUT
+
+PLAYBOOK:
+=========
+# ansible-playbook add-ansible-user.yml  -u root -k
+# ansible-playbook install_software.yml
+# ansible-playbook -e "target_service=chrony" install_software_with_debug.yml
