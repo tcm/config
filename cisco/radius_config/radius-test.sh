@@ -1,3 +1,3 @@
 #!/bin/bash
 
-radtest bob password 127.0.0.1 100 testing123
+radtest bob password 192.168.0.118 100 testing123
