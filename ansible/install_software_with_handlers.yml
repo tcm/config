@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+  - name: install ftpclient
+    package: name=lftp state=installed
+
+  - name: install ntpclient
+    package: name=chrony state=installed
+    notify:
+      - restart chronyd
+
+  handlers:
+  - name: Attempt to restart chronyd
+    service:
+       name: chronyd
+       state: restarted
+    listen: "restart chronyd"

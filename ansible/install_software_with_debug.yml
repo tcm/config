@@ -1,0 +1,23 @@
+---
+- hosts: all
+  remote_user: ansible
+
+  tasks:
+  - debug:
+      var: target_service 
+
+  - name: install ftpclient
+    package: name=lftp state=installed
+    become: true
+    register: task_debug
+  - debug: 
+      msg: "{{ task_debug }}"
+
+  - name: install ntpclient
+    package: name="{{ target_service }}" state=installed
+    become: true
+
+  - name: ensure chrony is running
+    service:
+      name: chronyd 
+      state: started

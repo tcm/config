@@ -1,0 +1,9 @@
+bob	Cleartext-Password := "password"
+	Reply-Message := "Hello, %{User-Name}"
+
+cisco   Cleartext-Password := "password"
+        Service-Type = Administrative-User,
+        Cisco-AVPair = "shell:priv-lvl=15"
+
+
+

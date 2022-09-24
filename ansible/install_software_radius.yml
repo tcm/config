@@ -1,0 +1,45 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+  - name: install freeradius-server
+    package: name=freeradius state=installed
+    notify:
+      - restart radiusd
+
+  - name: install freeradius-utils
+    package: name=freeradius-utils state=installed
+
+  - name: Copy "clients.conf" with owner and permissions
+    copy:
+      src: ./files/clients.conf
+      dest: /etc/raddb/clients.conf
+      owner: root
+      group: root
+      mode: '0644' 
+    notify:
+       - restart radiusd
+
+  - name: Copy "users" with owner and permissions
+    copy:
+      src: ./files/users
+      dest: /etc/raddb/mods-config/files/authorize
+      owner: root
+      group: root
+      mode: '0644' 
+    notify:
+      - restart radiusd
+
+  - name: Open Firewall-Ports for radiusd
+    firewalld:
+      service: radius
+      immediate: yes
+      state: enabled
+
+  handlers:
+  - name: Attempt to restart radiusd 
+    service:
+       name: radiusd
+       state: restarted
+    listen: "restart radiusd"s
