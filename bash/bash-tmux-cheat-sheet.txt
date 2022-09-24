@@ -8,10 +8,10 @@ Ctrl-R     Reverse search.
 
 TMUX:
 
-SHIFT-B %                   split window vertical.
-SHIFT-V Left/Right-Arrow    change to left or right window.
-SHIFT-B c                   new session.
-SHIFT-B d                   kill session.
+SHIFT-b %                   split window vertical.
+SHIFT-b Left/Right-Arrow    change to left or right window.
+SHIFT-b c                   new session.
+SHIFT-b d                   kill session.
 
 SPECIAL-COMMANDS:
 ack, jq
