@@ -1,38 +1,47 @@
 #!/bin/bash
 
 # Calculate Patching-Dates.
-# Start the script for instance at 28th the month before.
+# Start the script for instance at 1st of month.
+# 
+# (jb) 10/2022
 
 MONTH=$(date "+%-m")           # Actual month.
 YEAR=$(date "+%Y")             # Actual year.
 
 # Calculate next month. 
-# Comment this section out, if you start the script on the 1st of actual month.
-if [ $MONTH = 12 ] ; then
-  MONTH=1
-  YEAR=$[$YEAR+1]
-else
-  MONTH=$[$MONTH+1]             
-fi
+# Comment this section in, if you start the script on the 28. the month before.
+#if [ $MONTH = 12 ] ; then
+#  MONTH=1
+#  YEAR=$[$YEAR+1]
+#else
+#  MONTH=$[$MONTH+1]             
+#fi
 
 declare -i count=1             
+declare -i week2=0
 
-# Loop to check the beginning of a month for a Monday.
-while [ $count -le 7 ]
-do
-   # Return 1 for Monday.
+# Loop to check  for the 2nd Tueday.
+while [ $count -le 14 ]
+
+   # WEEKDAY = 1,2,3,4,5,6,7 (1 = Monday).
    WEEKDAY=$(date -d $MONTH/$count/$YEAR "+%u") 
-   
-   if [ $WEEKDAY = 1 ] ; then
+
+   if [ $WEEKDAY = 2 ] ; then # Tuesday?
+      week2=$[week2+1]
+   fi
+
+   if [ $week2 = 2 ] ; then # 2nd week?
     
       case "$1" in 
       "-s" )
-         echo "$[count+6].$MONTH.$YEAR" 
+         # Staging
+         echo "$[count+5].$MONTH.$YEAR" 
          exit 0
        ;;
 
        "-p" )
-         echo "$[count+13].$MONTH.$YEAR" 
+         # Productive
+         echo "$[count+12].$MONTH.$YEAR" 
          exit 0
        ;;
        "" )
@@ -44,4 +53,3 @@ do
    fi
    count=$[count+1]
 done
-
