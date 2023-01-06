@@ -1,0 +1,21 @@
+ hosts: all
+  become: yes
+
+  vars_prompt:
+    - name: domain_join_username
+      prompt: Enter the AD Join Username
+      private: false
+
+    - name: domain_join_password
+      prompt: Enter the AD Join password
+      private: true
+
+  roles:
+    - ansible-role-1
+    - ansible-role-2
+    - ansible-role-3
+
+  tasks:
+    - name: Rebooting system
+      reboot:
+        reboot_timeout: 600

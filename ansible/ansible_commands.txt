@@ -14,6 +14,13 @@ AD-HOC:
 # ansible <HOST> -m yum -a "name=httpd state=latest"       (Install standard webserver)
 # ansible <HOST> -m service -a "name=httpd state=started"
 
+# ansible -vvv -i host1,host2, all -u root -m ping
+# ansible internal -i ../ansible-inventory/hosts.yml -u root -m ping
+# ansible x.x.x.x -u root -i host.yml -m ping
+# ansible x.x.x.x -u root -i host.yml -m ansible.builtin.yum  -a "name=python3-dnf state=present"
+# ansible x.x.x.x -u root -i host.yml -a "yum list installed | grep python"
+# ansible-galaxy init test-role
+
 VARIABLES:
 ==========
 "{{ foo_bar }}"
@@ -29,6 +36,12 @@ DEBUG
 =====
 msg: A message that is printed to STDOUT
 var: A variable whose content is printed to STDOUT
+
+- debug:
+    msg: |
+      {{ ansible_facts.distribution }}
+      {{ ansible_facts.distribution_major_version }}
+oder über Playbook mit Template-Modul.
 
 PLAYBOOK:
 =========
