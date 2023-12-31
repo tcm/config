@@ -1,0 +1,38 @@
+Aufgabe:
+
+
+inventory.yml:
+
+ungrouped:
+  hosts:
+    mail.example.com:
+webservers:
+  hosts:
+    foo.example.com:
+    bar.example.com:
+dbservers:
+  hosts:
+    one.example.com:
+    ansible_host: 1.1.1.1
+    two.example.com:
+    ansible_host: 2.2.2.2
+    three.example.com:
+    ansible_host: 3.3.3.3
+
+
+Es sollen mehrere Hosts aus dem YAML-File gelöscht werden.
+Immer zwei Zeilen gehören zusammen.
+
+
+Lösung:
+
+vim -c "source hostnames.vim" inventory.yml
+
+hostnames.vim:
+
+set ic
+g/one.example.com/d
+.
+.
+g/1.1.1.1/d
+g/2.2.2.2/d
